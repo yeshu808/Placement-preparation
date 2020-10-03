@@ -1,3 +1,25 @@
+//www.interviewbit.com/problems/max-product-subarray/
+//Max Product Subarray
+int Solution::maxProduct(const vector<int> &nums) 
+{
+        int ans = INT_MIN;
+        int minAns = 1, maxAns =1;
+        int n = nums.size();
+
+        for(int i=0;i<n;i++)
+        {
+           if(nums[i]<0)
+               swap(minAns, maxAns);  // because multiplying by a negative number makes make negative max positive and vice versa
+
+            ans = max(ans, nums[i]*maxAns);
+            minAns = nums[i]*minAns;
+            maxAns = max(1,nums[i]*maxAns);
+
+        }
+
+        return ans;
+}
+
 /*
 Given a sorted array of N positive integers, find the smallest positive integer S such that S cannot be represented as sum of elements of any subset of the given array set.
 
