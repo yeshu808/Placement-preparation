@@ -1,5 +1,7 @@
 /*
 Given a sorted array of N positive integers, find the smallest positive integer S such that S cannot be represented as sum of elements of any subset of the given array set.
+
+https://www.geeksforgeeks.org/find-smallest-value-represented-sum-subset-given-array/
 */
 long long findSmallest(long long arr[], int n) {
         // code here
