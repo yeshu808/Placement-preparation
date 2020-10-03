@@ -41,6 +41,7 @@ long long findSmallest(long long arr[], int n) {
     }
 };
 
+//Count subarrays with sum less than or equal to k. O(n)
 //https://www.geeksforgeeks.org/number-subarrays-sum-less-k/
 int countSubarrays(int arr[], int n, int k) 
 { 
