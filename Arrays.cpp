@@ -40,3 +40,34 @@ long long findSmallest(long long arr[], int n) {
         return res;
     }
 };
+
+//https://www.geeksforgeeks.org/number-subarrays-sum-less-k/
+int countSubarrays(int arr[], int n, int k) 
+{ 
+    int start = 0, end = 0, 
+        count = 0, sum = arr[0]; 
+
+    while (start < n && end < n) 
+    { 
+        if (sum < k) 
+        { 
+            end++; 
+
+            if (end >= start) 
+                count += end - start; 
+
+            if (end < n) 
+                sum += arr[end]; 
+        } 
+
+        else 
+        { 
+            sum -= arr[start]; 
+            start++; 
+        } 
+    } 
+
+    return count; 
+}
+
+
